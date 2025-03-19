@@ -1,0 +1,357 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 1rem 0;
+    background: rgba(255, 255, 255, 0);
+    transition: background 0.3s;
+    z-index: 1000;
+}
+
+header.sticky {
+    background: #fff;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Maximum width for header content */
+    margin: 0 auto; /* Center the header content */
+    padding: 0 20px; /* Add padding to the sides */
+}
+
+header .logo img {
+    height: 30px;
+}
+
+header .contact-btn {
+    background: transparent;
+    color: #ff3e57;
+    padding: 10px 20px;
+    border: 2px solid #ff3e57;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+}
+
+header .contact-btn:hover {
+    background: #ff3e57;
+    color: white;
+}
+
+.hero-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0 50px 0; /* Add top padding to create space between header and hero section */
+}
+
+.hero-section .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    max-width: 1200px; /* Maximum width for hero section content */
+    margin: 0 auto; /* Center the hero section content */
+    padding: 0 20px; /* Add padding to the sides */
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-section .btn {
+    background: transparent;
+    color: #ff3e57;
+    padding: 10px 20px;
+    border: 2px solid #ff3e57;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+}
+
+.hero-section .btn:hover {
+    background: #ff3e57;
+    color: white;
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+    padding-bottom: 0px;
+    border-radius: 10px; /* Rounded edges */
+}
+
+section {
+    padding: 60px 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px; /* Maximum width for main content */
+    margin: auto;
+    padding: 0 20px; /* Add padding to the sides */
+}
+
+.service-box {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px; /* Maximum width for footer content */
+    margin: 0 auto; /* Center the footer content */
+    padding: 0 20px; /* Add padding to the sides */
+}
+
+.footer-logo img {
+    height: 30px;
+}
+
+.footer-text {
+    text-align: center;
+    flex: 1;
+}
+
+.footer-contact {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.footer-contact a {
+    color: white;
+    text-decoration: none;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    text-align: center;
+    max-width: 1200px; /* Maximum width for about section content */
+    margin: 0 auto; /* Center the about section content */
+    padding: 0 20px; /* Add padding to the sides */
+}
+
+.about-text {
+    flex: 1;
+    padding-bottom: 20px;
+}
+
+.image-container {
+    display: inline-block; /* Make the container fit the image */
+    background-color: white; /* White background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 10px; /* Padding around the image */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow for a 3D effect */
+    max-width: 100%; /* Set a maximum width for the container */
+}
+
+.about-image {
+    display: block; /* Ensure the image is a block element */
+    width: 100%; /* Make the image take up the full width of the container */
+    border-radius: 10px; /* Optional: Round the image corners to match the container */
+}
+
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.service-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 20px);
+    text-align: center;
+}
+
+.service-box img {
+    max-width: 50px;
+    margin-bottom: 10px;
+}
+
+.timeline-section {
+    background-color: #111;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.timeline-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.timeline {
+    max-width: 600px; /* Maximum width for timeline */
+    margin: 0 auto; /* Center the timeline */
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    flex-direction: row; /* Ensure horizontal alignment */
+    text-align: left; /* Ensure left alignment */
+}
+
+.timeline-step {
+    display: flex;
+    align-items: center;
+    flex-direction: row; /* Ensure horizontal alignment */
+    margin-right: 20px; /* Add spacing between step and duration */
+}
+
+.timeline-step span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 10px; /* Add spacing between number and text */
+}
+
+.timeline-duration {
+    font-size: 0.9rem;
+    color: #999;
+    margin-left: 10px; /* Add spacing between step and duration */
+}
+
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #444;
+    margin: 10px 0;
+}
+.close-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0 50px 0; /* Add top padding to create space between header and hero section */
+}
+
+.close-section .content {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    max-width: 1200px; /* Maximum width for hero section content */
+    margin: 0 auto; /* Center the hero section content */
+    padding: 0 20px; /* Add padding to the sides */
+}
+
+.close-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.close-section p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.close-section .btn {
+    background: transparent;
+    color: #ff3e57;
+    padding: 10px 20px;
+    border: 2px solid #ff3e57;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+}
+
+.close-section .btn:hover {
+    background: #ff3e57;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .hero-section .content {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .hero-image {
+        max-width: 50%; /* Limit the size of the hero image */
+        order: 1; /* Ensure the image is placed correctly */
+        margin-right: 20px; /* Add spacing between image and content */
+    }
+
+    .hero-section .text {
+        order: 2; /* Ensure the text is placed correctly */
+    }
+
+    .about-content {
+        flex-direction: row;
+        text-align: left;
+    }
+    .image-container {
+     max-width: 50%; 
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-section .text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-image {
+        order: 2; /* Ensure the image is between the heading and the paragraph */
+        margin: 20px 0; /* Add some spacing around the image */
+    }
+
+    .hero-section p {
+        order: 3; /* Ensure the paragraph is below the image */
+    }
+
+    .hero-section h1 {
+        order: 1; /* Ensure the heading is above the image */
+    }
+
+    .hero-section .btn {
+        order: 4; /* Ensure the button is below the paragraph */
+        margin-top: 20px; /* Add some spacing above the button */
+    }
+}
