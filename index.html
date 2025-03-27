@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareGap | Your Healthcare Partner</title>
+    <link rel="icon" type="image/png" href="https://imgur.com/QAdKjar.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Satoshi:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="dist/styles.css">
+    <!-- Calendly widget script -->
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</head>
+<body class="font-['Inter'] bg-white">
+    <!-- Calendly Modal -->
+    <div id="calendly-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[95%] max-w-3xl h-[80vh] bg-white rounded-lg shadow-xl overflow-hidden">
+            <div class="absolute top-0 right-0 z-10 p-4">
+                <button id="close-modal" class="w-8 h-8 flex items-center justify-center rounded-full bg-white shadow-md hover:bg-gray-100 transition-colors">
+                    <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="calendly-container" class="w-full h-full"></div>
+        </div>
+    </div>
+
+    <!-- Sticky Header -->
+    <header id="header" class="fixed w-full top-0 left-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="logo">
+                    <img src="https://imgur.com/jWqRq4Y.png" alt="CareGap Logo" class="h-8">
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#how-it-works" class="text-gray-700 hover:text-[#ff3e57] transition-colors">How It Works</a>
+                    <a href="#why-caregap" class="text-gray-700 hover:text-[#ff3e57] transition-colors">Why CareGap</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-[#ff3e57] transition-colors">Testimonials</a>
+                    <a href="https://calendly.com/caregap/caregap-demo" class="bg-[#ff3e57] text-white px-6 py-2 rounded-full hover:bg-[#ff3e57]/90 transition-colors">Book a Demo</a>
+                </div>
+                <button class="md:hidden" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#how-it-works" class="text-gray-700 hover:text-[#ff3e57] transition-colors">How It Works</a>
+                    <a href="#why-caregap" class="text-gray-700 hover:text-[#ff3e57] transition-colors">Why CareGap</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-[#ff3e57] transition-colors">Testimonials</a>
+                    <a href="https://calendly.com/caregap/caregap-demo" class="bg-[#ff3e57] text-white px-6 py-2 rounded-full hover:bg-[#ff3e57]/90 transition-colors text-center">Book a Demo</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-20 bg-gradient-to-b from-white to-gray-50">
+        <div class="container mx-auto px-6 py-20">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-12 md:mb-0" data-aos="fade-right">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                        <span class="text-gray-900">Your Partner in</span>
+                        <span class="text-[#ff3e57] block">Bridging the Gap</span>
+                        <span class="text-gray-900">in Patient Care</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8">Empowering brands and labs to deliver comprehensive health and wellness solutions.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://calendly.com/caregap/caregap-demo" class="bg-[#ff3e57] text-white px-8 py-3 rounded-full hover:bg-[#ff3e57]/90 transition-colors">Get Started</a>
+                        <a href="#how-it-works" class="border-2 border-[#ff3e57] text-[#ff3e57] px-8 py-3 rounded-full hover:bg-[#ff3e57] hover:text-white transition-colors">Learn More</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <img src="https://imgur.com/AQtIqVE.png" alt="Hero Image" class="w-full rounded-2xl shadow-2xl animate-float">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">How It Works</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-[#ff3e57]/10 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl font-bold text-[#ff3e57]">01</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Intro Call</h3>
+                    <p class="text-gray-600">30-minute consultation with a CareGap expert to understand your needs.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-[#ff3e57]/10 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl font-bold text-[#ff3e57]">02</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Platform Demo</h3>
+                    <p class="text-gray-600">1-hour deep dive into our platform capabilities and project scoping.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-[#ff3e57]/10 rounded-full flex items-center justify-center mb-6">
+                        <span class="text-2xl font-bold text-[#ff3e57]">03</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Launch</h3>
+                    <p class="text-gray-600">Quick setup and deployment of your diagnostic program within weeks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why CareGap Section -->
+    <section id="why-caregap" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">Why CareGap</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up">
+                    <img src="https://imgur.com/pviAzcl.png" alt="Closing Care Gaps" class="w-16 h-16 mb-6">
+                    <h3 class="text-xl font-semibold mb-4">Closing Care Gaps</h3>
+                    <p class="text-gray-600">Help Labs deliver tests directly to patients, reducing care gaps and improving outcomes.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://imgur.com/n8UBysL.png" alt="Sample Collection Kits" class="w-16 h-16 mb-6">
+                    <h3 class="text-xl font-semibold mb-4">Sample Collection Kits</h3>
+                    <p class="text-gray-600">Market-leading collection kits with custom packaging that matches your brand.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://imgur.com/FbN4WDz.png" alt="Lab Testing" class="w-16 h-16 mb-6">
+                    <h3 class="text-xl font-semibold mb-4">Lab Testing</h3>
+                    <p class="text-gray-600">Robust network of accredited labs providing extensive test options to your patients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">What Our Partners Say</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 p-8 rounded-2xl" data-aos="fade-up">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-[#ff3e57]/10 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-[#ff3e57] font-bold">JD</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">John Doe</h4>
+                            <p class="text-gray-600">Lab Director, Healthcare Provider</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"CareGap has transformed how we deliver diagnostic services to our patients. The platform is intuitive and the support is exceptional."</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-[#ff3e57]/10 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-[#ff3e57] font-bold">AS</span>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Alice Smith</h4>
+                            <p class="text-gray-600">Product Manager, Health Tech</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"The integration was seamless, and our patients love the improved experience. CareGap has been a game-changer for our diagnostic program."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-[#ff3e57] text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-8" data-aos="fade-up">Ready to Transform Your Healthcare Delivery?</h2>
+            <p class="text-xl mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Join leading healthcare providers who are already using CareGap to improve patient care.</p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://calendly.com/caregap/caregap-demo" class="bg-white text-[#ff3e57] px-8 py-3 rounded-full hover:bg-gray-100 transition-colors">Book a Demo</a>
+                <a href="mailto:sales@caregap.io" class="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-[#ff3e57] transition-colors">Contact Sales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <img src="https://imgur.com/jWqRq4Y.png" alt="CareGap Logo" class="h-8 mb-4">
+                    <p class="text-gray-400">&copy; 2024 CareGap. All rights reserved.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Contact</h3>
+                    <p class="text-gray-400"><a href="mailto:sales@caregap.io" class="hover:text-white transition-colors">sales@caregap.io</a></p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
