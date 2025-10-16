@@ -95,3 +95,25 @@ document.querySelectorAll('a[href*="calendly.com"]').forEach(button => {
         openCalendlyModal();
     });
 });
+
+// ===== Who We Work With: marquee duplication & responsiveness =====
+(function initLogoMarquee() {
+  const track = document.querySelector('[data-logo-track]');
+  if (!track) return;
+
+  // Duplicate the initial set of logos once to create a continuous loop
+  const firstSet = Array.from(track.children);
+  const cloneFragment = document.createDocumentFragment();
+  firstSet.forEach(node => cloneFragment.appendChild(node.cloneNode(true)));
+  track.appendChild(cloneFragment);
+
+  // Optional: adjust speed based on viewport (more logos visible -> faster)
+  const setSpeed = () => {
+    const base = 40; // seconds
+    const vw = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    const speed = vw >= 1280 ? base : vw >= 768 ? base * 1.2 : base * 1.4;
+    track.style.setProperty('--logo-speed', `${speed}s`);
+  };
+  setSpeed();
+  window.addEventListener('resize', setSpeed);
+})();
