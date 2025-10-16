@@ -73,3 +73,26 @@
         font-size: 2rem;
     }
 } 
+/* Infinite horizontal scroll for partner logos */
+@keyframes caregap-logo-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* we scroll one full set width */
+}
+
+/* Base track styles */
+.logo-track {
+  /* speed is adjustable via --logo-speed (seconds for one full loop) */
+  --logo-speed: 40s;
+  animation: caregap-logo-scroll var(--logo-speed) linear infinite;
+}
+
+/* Pause on hover/focus for accessibility */
+.group:hover .logo-track,
+.group:focus-within .logo-track {
+  animation-play-state: paused;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .logo-track { animation: none; }
+}
